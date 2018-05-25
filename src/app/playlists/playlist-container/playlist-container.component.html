@@ -1,0 +1,6 @@
+
+  <app-playlist-details [playlist]="playlist$ | async"
+                        (playlistChange)="save($event)">
+    <h3> Playlist  {{playlist$.name}}</h3>
+  </app-playlist-details>
+

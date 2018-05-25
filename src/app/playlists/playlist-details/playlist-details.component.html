@@ -1,0 +1,39 @@
+
+<div [ngSwitch]="mode" *ngIf="playlist">
+
+  <div *ngSwitchDefault>
+      <dl>
+        <dt>Name</dt>
+        <dd>{{playlist.name}}</dd>
+        <dt>Favourite</dt>
+        <dd [style.backgroundColor]=" (playlist.favourite? 'lightgreen' : 'orange') ">
+          {{ (playlist.favourite? 'Yes' : 'No')}}
+        </dd>
+        <dt>Color</dt>
+        <dd [style.borderBottom]=" '1px solid ' + playlist.color "
+            [attr.data-color]= "playlist.color">{{playlist.color}}
+        </dd>
+      </dl>
+    <input type="button" class="btn btn-info" value="Edit" (click)="edit()">
+  </div>
+
+  <form *ngSwitchCase=" 'edit' " (ngSubmit)="save(formRef)" #formRef="ngForm">
+    <div class="form-group">
+      <label>Name: </label>
+      <input type="text" class="form-control" [ngModel]="playlist.name" name="name">
+    </div>
+    <div class="form-group">
+      <input type="checkbox"  [ngModel]="playlist.name" name="favourite">
+      <label>Favourite: </label>
+    </div>
+    <div class="form-group" >
+      <label>Color:</label>
+      <input type="color" [ngModel]="playlist.color" name="color">
+    </div>
+    <input type="button" class="btn btn-danger" value="Cancel" (click)="cancel()">
+    <input type="submit" class="btn btn-success" value="Save">
+  </form>
+
+</div>
+
+

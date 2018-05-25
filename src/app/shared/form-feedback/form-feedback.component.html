@@ -1,0 +1,11 @@
+<ng-container *ngIf="field.touched || field.dirty">
+  <div *ngIf="field.hasError('required')">
+    Field is requided
+  </div>
+  <div *ngIf="field.getError('minlength') as err">
+    Field must be longer than {{err.requiredLength}} now is {{err.actualLength}}
+  </div>
+  <div *ngIf="field.getError('censor') as err">
+    Field cannot be {{err.badword}}
+  </div>
+</ng-container>

@@ -1,0 +1,8 @@
+
+:host ::ng-deep p{
+  color: hotpink
+}
+.list-group-item{
+  border-left:10px solid;
+}
+

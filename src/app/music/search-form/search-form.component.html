@@ -1,0 +1,5 @@
+<div class="form-group mb-3" [formGroup]="queryForm">
+  <input type="text" class="form-control" placeholder="Search..." formControlName="query">
+  <app-form-feedback [field]="queryForm.get('query')">
+  </app-form-feedback>
+</div>

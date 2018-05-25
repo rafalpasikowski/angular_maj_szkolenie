@@ -1,0 +1,16 @@
+<p>
+  music-search works!
+</p>
+
+<div class="row">
+  <div class="col">
+    <app-search-form [query]="query$ | async"
+      (queryChange)="search($event)"></app-search-form>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <app-album-list [albums]="albums$ | async ">
+    </app-album-list>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark mb-3">
+  <div class="container">
+  <a class="navbar-brand"
+     [routerLinkActiveOptions]="{exact:true}"
+     routerLinkActive="active"
+     routerLink="/">Music App</a>
+
+    <div class="collapse navbar-collapse">
+
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active"
+             routerLink="playlists">Music</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLinkActive="active"
+             routerLink="music">Search</a>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <div class="row">
+    <div class="col">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+      <!--<button (click)="hide = !hide">{{hide}}</button>-->
+      <!--<app-playlists *appPseudoPlacki="hide"></app-playlists>-->
+      <!--<div *appPseudoPlacki="hide  let zmienna=time">Placki {{zmienna}}</div>-->
+      <!--<app-music-search></app-music-search>-->
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

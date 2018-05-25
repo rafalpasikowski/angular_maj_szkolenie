@@ -1,0 +1,10 @@
+<div class="row">
+  <div class="col"><app-item-list
+      [selected]="selected"
+      (selectedChange)=" selectPlaylist($event) "
+      [playlists]="playlists"></app-item-list>
+    </div>
+  <div class="col">
+ <router-outlet></router-outlet>
+  </div>
+</div>
